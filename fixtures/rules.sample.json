@@ -1,0 +1,18 @@
+[
+  {
+    "id": "r1",
+    "type": "promotions_age",
+    "params": { "olderThanDays": 90, "category": "promotions" },
+    "enabled": true,
+    "priority": 10,
+    "createdAt": "2025-08-29T00:00:00Z"
+  },
+  {
+    "id": "r2",
+    "type": "list_unsubscribe",
+    "params": { "autoUnsubscribe": false },
+    "enabled": true,
+    "priority": 20,
+    "createdAt": "2025-08-29T00:00:00Z"
+  }
+]
