@@ -12,5 +12,8 @@
 ## Tests
 - `tests/schemas.spec.ts` valida que los fixtures pasan los esquemas.
 
+## Firestore (SPRINT 1.2)
+- Ver `docs/firestore.md` para el esquema propuesto (colecciones, índices, TTL y buenas prácticas).
+
 ## Próximo
 - Integración Firestore (colecciones y reglas de indexado).
