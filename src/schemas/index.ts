@@ -1,3 +1,3 @@
-export * from './rule.schema.js';
-export * from './lists.schema.js';
-export * from './messageCandidate.schema.js';
+export * from './rule.schema';
+export * from './lists.schema';
+export * from './messageCandidate.schema';

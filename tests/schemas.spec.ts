@@ -2,9 +2,9 @@ import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { describe, it, expect } from 'vitest';
-import { RuleSchema } from '../src/schemas/rule.schema.js';
-import { WhitelistEntrySchema } from '../src/schemas/lists.schema.js';
-import { MessageCandidateSchema } from '../src/schemas/messageCandidate.schema.js';
+import { RuleSchema } from '../src/schemas/rule.schema';
+import { WhitelistEntrySchema } from '../src/schemas/lists.schema';
+import { MessageCandidateSchema } from '../src/schemas/messageCandidate.schema';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);

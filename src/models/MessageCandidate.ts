@@ -1,4 +1,4 @@
-import type { ProposedAction } from './common.js';
+import type { ProposedAction } from './common';
 
 export interface HeaderKV {
   name: string;
