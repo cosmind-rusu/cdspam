@@ -1,0 +1,13 @@
+[
+  {
+    "messageId": "m1",
+    "signals": { "hasListUnsubscribe": true, "from": "news@example.com" },
+    "proposedAction": "label_review"
+  },
+  {
+    "messageId": "m2",
+    "signals": { "authResults": "spf=pass dkim=pass", "from": "promo@shop.com" },
+    "appliedRuleId": "r1",
+    "proposedAction": "archive"
+  }
+]
