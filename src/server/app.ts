@@ -1,5 +1,6 @@
 import Fastify from 'fastify';
 import type { FastifyInstance } from 'fastify';
+import cors from '@fastify/cors';
 import { RuleSchema } from '../schemas/rule.schema';
 import { WhitelistEntrySchema } from '../schemas/lists.schema';
 import { LabelMappingSchema } from '../schemas/labelMapping.schema';
@@ -10,6 +11,22 @@ import type { Storage } from '../storage/Storage';
 
 export function buildApp(opts?: { storage?: Storage }): FastifyInstance {
   const app = Fastify();
+
+  // CORS (permitimos origen dinámico en dev / configurable por env)
+  app.register(cors, {
+    origin: (origin, cb) => {
+      // Permitir sin origen (curl) o cualquier origen en dev
+      const allowed = process.env.CORS_ORIGIN?.split(',').map((s) => s.trim());
+      if (!origin || !allowed || allowed.includes('*') || allowed.includes(origin)) {
+        cb(null, true);
+      } else {
+        cb(new Error('CORS not allowed'), false);
+      }
+    },
+    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+    credentials: true,
+  });
+
   const storage = opts?.storage ?? createStorage();
 
   // Health
